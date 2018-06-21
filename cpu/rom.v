@@ -1,20 +1,21 @@
+`include "define.v"
 module rom(
   input wire ce,
-  input wire[5:0] addr,
+  input wire[`InstAddrBus] addr,
 
-  output reg[31:0] inst
+  output reg[`InstBus] inst
 );
-    reg[31:0] rom[63:0];
+    reg[`InstBus] rom[0:`InstMemNum-1];
 
     initial begin
-        $readmemh ("rom.data", rom);
+        $readmemb ("rom.data", rom);
     end
 
     always @(*) begin
-      if (ce == 1'b0) begin
-        inst = 32'h0;
+      if (ce == `ChipDisable) begin
+        inst <= `ZeroWord;
       end else begin
-        inst = rom[addr];
+        inst <= rom[addr[`InstMemNumLog2+1:2]];
       end
     end
 
