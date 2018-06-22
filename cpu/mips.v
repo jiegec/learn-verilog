@@ -1,5 +1,5 @@
 `include "define.v"
-module if_and_id(
+module mips(
     input wire clk,
     input wire rst
 );
@@ -17,6 +17,25 @@ module if_and_id(
     wire[`RegBus] id_reg2_o;
     wire id_wreg_o;
     wire[`RegAddrBus] id_wd_o;
+
+    wire[`AluOpBus] ex_aluop_i;
+    wire[`AluSelBus] ex_alusel_i;
+    wire[`RegBus] ex_reg1_i;
+    wire[`RegBus] ex_reg2_i;
+    wire ex_wreg_i;
+    wire[`RegAddrBus] ex_wd_i;
+
+    wire ex_wreg_o;
+    wire[`RegAddrBus] ex_wd_o;
+    wire[`RegBus] ex_wdata_o;
+
+    wire mem_wreg_i;
+    wire[`RegAddrBus] mem_wd_i;
+    wire[`RegBus] mem_wdata_i;
+
+    wire mem_wreg_o;
+    wire[`RegAddrBus] mem_wd_o;
+    wire[`RegBus] mem_wdata_o;
 
     wire wb_wreg_i;
     wire[`RegAddrBus] wb_wd_i;
@@ -51,4 +70,23 @@ module if_and_id(
                     .re2(reg2_read), .raddr2(reg2_addr),
                     .rdata2(reg2_data));
 
-endmodule // if_and_id
+    id_ex id_ex0(.clk(clk), .rst(rst), 
+                .id_aluop(id_aluop_o), .id_alusel(id_alusel_o), .id_reg1(id_reg1_o), .id_reg2(id_reg2_o), .id_wd(id_wd_o), .id_wreg(id_wreg_o),
+                .ex_aluop(ex_aluop_i), .ex_alusel(ex_alusel_i), .ex_reg1(ex_reg1_i), .ex_reg2(ex_reg2_i), .ex_wd(ex_wd_i), .ex_wreg(ex_wreg_i)
+    );
+
+    ex ex0(.rst(rst), .aluop_i(ex_aluop_i), .alusel_i(ex_alusel_i), .reg1_i(ex_reg1_i), .reg2_i(ex_reg2_i), .wd_i(ex_wd_i), .wreg_i(ex_wreg_i),
+           .wd_o(ex_wd_o), .wreg_o(ex_wreg_o), .wdata_o(ex_wdata_o));
+
+    ex_mem ex_mem0(.clk(clk), .rst(rst), .ex_wd(ex_wd_o), .ex_wreg(ex_wreg_o), .ex_wdata(ex_wdata_o),
+                   .mem_wd(mem_wd_i), .mem_wreg(mem_wreg_i), .mem_wdata(mem_wdata_i));
+
+    mem mem0(.rst(rst),
+             .wd_i(mem_wd_i), .wreg_i(mem_wreg_i), .wdata_i(mem_wdata_i),
+             .wd_o(mem_wd_o), .wreg_o(mem_wreg_o), .wdata_o(mem_wdata_o));
+            
+    mem_wb mem_wb0(.clk(clk), .rst(rst),
+                   .mem_wd(mem_wd_o), .mem_wreg(mem_wreg_o), .mem_wdata(mem_wdata_o),
+                   .wb_wd(wb_wd_i), .wb_wreg(wb_wreg_i), .wb_wdata(wb_wdata_i));
+
+endmodule // mips

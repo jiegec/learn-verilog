@@ -1,0 +1,11 @@
+[
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu", 
+  "arguments": [
+   "cc", 
+   "-Wno-fatal", 
+   "if_and_id.cpp"
+  ], 
+  "file": "if_and_id.cpp"
+ }
+]

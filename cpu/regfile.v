@@ -20,7 +20,7 @@ module regfile(
     reg[`RegBus] regs[0:`RegNum-1];
 
     always @ (posedge clk) begin
-      if (rst == `RstEnable) begin
+      if (rst == `RstDisable) begin
         if ((we == `WriteEnable) && (waddr != `RegNumLog2'h0)) begin
           regs[waddr] <= wdata;
         end

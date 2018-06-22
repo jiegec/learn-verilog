@@ -19,7 +19,7 @@ module pc_reg (
       if (ce == `ChipDisable) begin
         pc <= 32'h00000000;
       end else begin
-        pc <= pc + 4'h4;
+        pc <= pc + 32'h00000004;
       end
     end
 

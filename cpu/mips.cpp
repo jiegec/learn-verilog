@@ -1,4 +1,4 @@
-#include "Vif_and_id.h"
+#include "Vmips.h"
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 #include <stdio.h>
@@ -8,11 +8,11 @@
 int main(int argc, char **argv)
 {
   Verilated::commandArgs(argc, argv);
-  Vif_and_id *top = new Vif_and_id;
+  Vmips *top = new Vmips;
   Verilated::traceEverOn(true);
   VerilatedVcdC *trace = new VerilatedVcdC;
   top->trace(trace, 99);
-  trace->open("if_and_id.vcd");
+  trace->open("mips.vcd");
 
   size_t tick = 0;
   while (!Verilated::gotFinish())
