@@ -1,4 +1,3 @@
-#!/bin/sh
 Vid: *.v id.cpp
 	verilator -Wno-fatal -trace --cc id.v --exe id.cpp
 	make -j -C obj_dir -f Vid.mk Vid
@@ -8,13 +7,16 @@ Vmips: *.v mips.cpp rom.hex
 	make -j -C obj_dir -f Vmips.mk Vmips
 	cp obj_dir/Vmips .
 rom.o: rom.S
-	mipsel-elf-as -EB rom.S -o rom.o
+	mipsel-elf-as -mips32 -EB rom.S -o rom.o
 rom.bin: rom.o
 	mipsel-elf-objcopy -O binary rom.o -j .text rom.bin
 rom.hex: rom.bin
-	cat rom.bin | perl -lpe '$$_=join "\n", unpack"(H8)*"' > rom.hex
-.PHONY: clean disasm
+	xxd -p rom.bin | tr -d '\n' | sed -e 's/\(.\{8\}\)/\1\n/g' > rom.hex
+
+.PHONY: clean disasm all
 clean:
-	rm Vmips Vid rom.o rom.bin rom.hex
+	rm -f Vmips Vid rom.o rom.bin rom.hex
+	rm -rf obj_dir
 disasm: rom.o
 	mipsel-elf-objdump -D -j .text rom.o
+all: Vid Vmips

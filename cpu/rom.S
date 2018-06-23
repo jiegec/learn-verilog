@@ -3,17 +3,22 @@
 .set noat
 
 _start:
+    li $31, 0x12345678
     ori $2, $0, 0x11
     andi $2, 0x10
     ori $3, $0, 0x100
+    pref 1, 10($1)
     or $4, $3, $2
     or $4, $3, $2
     and $4, $3, $2
     xor $4, $3, $2
     nor $4, $3, $2
+    sync
     ori $10, 0x1
     ori $10, 0x2
     ori $10, 0x4
     ori $10, 0x8
     ori $10, 0x10
     ori $10, 0x20
+    nop
+    ssnop

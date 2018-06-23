@@ -4,8 +4,237 @@
   "arguments": [
    "cc", 
    "-Wno-fatal", 
-   "if_and_id.cpp"
+   "id.cpp"
   ], 
-  "file": "if_and_id.cpp"
+  "file": "id.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "../id.cpp"
+  ], 
+  "file": "../id.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "/usr/local/Cellar/verilator/3.924/share/verilator/include/verilated.cpp"
+  ], 
+  "file": "/usr/local/Cellar/verilator/3.924/share/verilator/include/verilated.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "/usr/local/Cellar/verilator/3.924/share/verilator/include/verilated_vcd_c.cpp"
+  ], 
+  "file": "/usr/local/Cellar/verilator/3.924/share/verilator/include/verilated_vcd_c.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "Vid__ALLcls.cpp"
+  ], 
+  "file": "Vid__ALLcls.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "Vid__ALLsup.cpp"
+  ], 
+  "file": "Vid__ALLsup.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu", 
+  "arguments": [
+   "cc", 
+   "-Wno-fatal", 
+   "mips.cpp"
+  ], 
+  "file": "mips.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "../mips.cpp"
+  ], 
+  "file": "../mips.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "/usr/local/Cellar/verilator/3.924/share/verilator/include/verilated.cpp"
+  ], 
+  "file": "/usr/local/Cellar/verilator/3.924/share/verilator/include/verilated.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "/usr/local/Cellar/verilator/3.924/share/verilator/include/verilated_vcd_c.cpp"
+  ], 
+  "file": "/usr/local/Cellar/verilator/3.924/share/verilator/include/verilated_vcd_c.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "Vmips__ALLcls.cpp"
+  ], 
+  "file": "Vmips__ALLcls.cpp"
+ }, 
+ {
+  "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
+  "arguments": [
+   "c++", 
+   "-I.", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include", 
+   "-I/usr/local/Cellar/verilator/3.924/share/verilator/include/vltstd", 
+   "-DVL_PRINTF=printf", 
+   "-DVM_COVERAGE=0", 
+   "-DVM_SC=0", 
+   "-DVM_TRACE=1", 
+   "-Wno-parentheses-equality", 
+   "-Wno-sign-compare", 
+   "-Wno-uninitialized", 
+   "-Wno-unused-parameter", 
+   "-Wno-unused-variable", 
+   "-Wno-shadow", 
+   "-c", 
+   "Vmips__ALLsup.cpp"
+  ], 
+  "file": "Vmips__ALLsup.cpp"
  }
 ]

@@ -219,6 +219,10 @@ module id(
             instvalid <= `InstValid;
           end
         end
+
+        if (instvalid == `InstInvalid) begin
+          $display("Invalid or unsupported instruction %h", inst_i);
+        end
       end
     end
 
