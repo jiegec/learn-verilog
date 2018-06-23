@@ -113,6 +113,14 @@ module id(
                     reg2_read_o <= 1'b1; // read 2nd operand from rt
                     instvalid <= `InstValid;
                   end
+                  `EXE_SRAV:  begin
+                    wreg_o <= `WriteEnable;
+                    aluop_o <= `EXE_SRA_OP;
+                    alusel_o <= `EXE_RES_SHIFT;
+                    reg1_read_o <= 1'b1; // read 1st operand from rs
+                    reg2_read_o <= 1'b1; // read 2nd operand from rt
+                    instvalid <= `InstValid;
+                  end
                   // nop
                   `EXE_SYNC:  begin
                     wreg_o <= `WriteDisable;
