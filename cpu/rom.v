@@ -8,7 +8,7 @@ module rom(
     reg[`InstBus] rom[0:`InstMemNum-1];
 
     initial begin
-        $readmemb ("rom.data", rom);
+        $readmemh ("rom.hex", rom);
     end
 
     always @(*) begin
