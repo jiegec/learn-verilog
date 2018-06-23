@@ -12,7 +12,9 @@ rom.o: rom.S
 rom.bin: rom.o
 	mipsel-elf-objcopy -O binary rom.o -j .text rom.bin
 rom.hex: rom.bin
-	xxd -ps rom.bin | sed -e 's/\([0-9a-eA-E]\{8\}\)/\1\n/g' > rom.hex
-.PHONY: clean
+	cat rom.bin | perl -lpe '$$_=join "\n", unpack"(H8)*"' > rom.hex
+.PHONY: clean disasm
 clean:
 	rm Vmips Vid rom.o rom.bin rom.hex
+disasm: rom.o
+	mipsel-elf-objdump -D -j .text rom.o

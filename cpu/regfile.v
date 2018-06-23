@@ -23,6 +23,7 @@ module regfile(
       if (rst == `RstDisable) begin
         if ((we == `WriteEnable) && (waddr != `RegNumLog2'h0)) begin
           regs[waddr] <= wdata;
+          $display("register %d is set to %h",waddr, wdata); 
         end
       end
     end
