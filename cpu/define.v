@@ -14,26 +14,43 @@
 `define ChipEnable 1'b1
 `define ChipDisable 1'b0
 
+// special, check op3
 `define EXE_AND 6'b100100
 `define EXE_OR 6'b100101
 `define EXE_XOR 6'b100110
 `define EXE_NOR 6'b100111
+
+// check op
 `define EXE_ANDI 6'b001100
 `define EXE_ORI 6'b001101
 `define EXE_XORI 6'b001110
 `define EXE_LUI 6'b001111
 
-`define EXE_SLL 6'b000000
-`define EXE_SLLV 6'b000100
-`define EXE_SRL 6'b000010
-`define EXE_SRLV 6'b000110
-`define EXE_SRA 6'b000011
-`define EXE_SRAV 6'b000111
+// check op3, when 31:21 are zeros
+`define EXE_SLL 6'b000000 // logic left shift
+`define EXE_SRL 6'b000010 // logic right shift
+`define EXE_SRA 6'b000011 // arithmetic right shift
+
+// special, check op3
+`define EXE_SLLV 6'b000100 // logic left shift with variable
+`define EXE_SRLV 6'b000110 // logic right shift with variable
+`define EXE_SRAV 6'b000111 // arithmetic right shift with variable
+
+// special, check op3
+`define EXE_MOVN 6'b001011 // conditional move on non zero
+`define EXE_MOVZ 6'b001010 // conditional move on zero
+`define EXE_MFHI 6'b010000 // rd <- hi
+`define EXE_MFLO 6'b010010 // rd <- lo
+`define EXE_MTHI 6'b010001 // hi <- rs
+`define EXE_MTLO 6'b010011 // lo <- rs
 
 `define EXE_SPECIAL_INST 6'b000000 // check op3
 // these are implemented as nop
+// special, check op3
 `define EXE_SYNC 6'b001111
+// check op
 `define EXE_PREF 6'b110011
+// this is sll in fact
 `define EXE_NOP 6'b000000
 
 `define EXE_NOP_OP 8'b00000000

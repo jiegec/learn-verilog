@@ -1,9 +1,9 @@
-Vid: *.v id.cpp
-	verilator -Wno-fatal -trace --cc id.v --exe id.cpp
+Vid: *.sv id.cpp
+	verilator -Wall -Wno-fatal -trace --cc id.sv --exe id.cpp
 	make -j -C obj_dir -f Vid.mk Vid
 	cp obj_dir/Vid .
-Vmips: *.v mips.cpp rom.hex
-	verilator -Wno-fatal -trace --cc mips.v --exe mips.cpp
+Vmips: *.sv mips.cpp rom.hex
+	verilator -Wall -Wno-fatal -trace --cc mips.sv --exe mips.cpp
 	make -j -C obj_dir -f Vmips.mk Vmips
 	cp obj_dir/Vmips .
 rom.o: rom.S

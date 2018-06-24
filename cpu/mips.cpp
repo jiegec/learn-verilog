@@ -5,8 +5,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int main(int argc, char **argv)
-{
+size_t tick = 0;
+
+double sc_time_stamp() {
+  return (double)tick;
+}
+
+int main(int argc, char **argv) {
   Verilated::commandArgs(argc, argv);
   Vmips *top = new Vmips;
   Verilated::traceEverOn(true);
@@ -14,17 +19,16 @@ int main(int argc, char **argv)
   top->trace(trace, 99);
   trace->open("mips.vcd");
 
-  size_t tick = 0;
-  while (!Verilated::gotFinish())
-  {
+  while (!Verilated::gotFinish()) {
     top->clk = 0;
     top->eval();
-    trace->dump(2 * tick);
+    tick++;
+    trace->dump(tick);
 
     top->clk = 1;
     top->eval();
-    trace->dump(2 * tick + 1);
     tick++;
+    trace->dump(tick);
     usleep(100);
   }
 

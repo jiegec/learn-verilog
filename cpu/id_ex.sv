@@ -18,7 +18,7 @@ module id_ex(
   output wire ex_wreg
 );
 
-    always @(posedge clk) begin
+    always_ff @(posedge clk) begin
         if (rst == `RstEnable) begin
             ex_aluop <= `EXE_NOP_OP;
             ex_alusel <= `EXE_RES_NOP;

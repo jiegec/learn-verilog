@@ -11,11 +11,11 @@ module rom(
         $readmemh ("rom.hex", rom);
     end
 
-    always @(*) begin
+    always_comb begin
       if (ce == `ChipDisable) begin
-        inst <= `ZeroWord;
+        inst = `ZeroWord;
       end else begin
-        inst <= rom[addr[`InstMemNumLog2+1:2]];
+        inst = rom[addr[`InstMemNumLog2+1:2]];
       end
     end
 
