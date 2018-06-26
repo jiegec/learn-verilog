@@ -12,7 +12,7 @@ module mem_wb(
     output reg[`RegBus] wb_wdata
 );
 
-    always @(posedge clk) begin
+    always_ff @(posedge clk) begin
       if (rst == `RstEnable) begin
         wb_wd <= `NOPRegAddr;
         wb_wreg <= `WriteDisable;

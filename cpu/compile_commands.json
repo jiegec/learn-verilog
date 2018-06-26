@@ -1,14 +1,5 @@
 [
  {
-  "directory": "/Volumes/Data/learn_verilog/cpu", 
-  "arguments": [
-   "cc", 
-   "-Wno-fatal", 
-   "id.cpp"
-  ], 
-  "file": "id.cpp"
- }, 
- {
   "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 
   "arguments": [
    "c++", 
@@ -117,15 +108,6 @@
    "Vid__ALLsup.cpp"
   ], 
   "file": "Vid__ALLsup.cpp"
- }, 
- {
-  "directory": "/Volumes/Data/learn_verilog/cpu", 
-  "arguments": [
-   "cc", 
-   "-Wno-fatal", 
-   "mips.cpp"
-  ], 
-  "file": "mips.cpp"
  }, 
  {
   "directory": "/Volumes/Data/learn_verilog/cpu/obj_dir", 

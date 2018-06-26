@@ -43,7 +43,7 @@ module regfile(
       end
     end
 
-    always @ (*) begin
+    always_comb begin
       if (rst == `RstEnable) begin
         rdata2 = `ZeroWord;
       end else if (raddr2 == `RegNumLog2'h0) begin
