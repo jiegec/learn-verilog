@@ -20,11 +20,26 @@
 `define EXE_XOR 6'b100110
 `define EXE_NOR 6'b100111
 
+// special, check op3
+`define EXE_MULT 6'b011000 // {hi, lo} <- rs * rt as signed
+`define EXE_MULTU 6'b011001 // {hi, lo} <- rs * rt as unsigned
+
 // check op
 `define EXE_ANDI 6'b001100
 `define EXE_ORI 6'b001101
 `define EXE_XORI 6'b001110
 `define EXE_LUI 6'b001111
+
+// check op
+`define EXE_ADDI 6'b001000 // rt <- rs + imm fail when overflow
+`define EXE_ADDIU 6'b001001 // rt <- rs + imm
+`define EXE_SLTI 6'b001010 // rt <- (rs < imm) as signed
+`define EXE_SLTIU 6'b001011 // rt <- (rs < imm) as unsigned
+
+// special2, check op3
+`define EXE_CLZ 6'b100000 // rd <- leading zeros of rs
+`define EXE_CLO 6'b100001 // rd <- leading ones of rs
+`define EXE_MUL 6'b000010 // rd <- rs * rt
 
 // check op3, when 31:21 are zeros
 `define EXE_SLL 6'b000000 // logic left shift
@@ -44,7 +59,17 @@
 `define EXE_MTHI 6'b010001 // hi <- rs
 `define EXE_MTLO 6'b010011 // lo <- rs
 
-`define EXE_SPECIAL_INST 6'b000000 // check op3
+// special, check op3
+`define EXE_ADD 6'b100000 // rd <- rs + rt fail when overflow
+`define EXE_ADDU 6'b100001 // rd <- rs + rt
+`define EXE_SUB 6'b100010 // rd <- rs - rt fail when overflow
+`define EXE_SUBU 6'b100011 // rd <- rs - rt
+`define EXE_SLT 6'b101010 // rd <- (rs < rt) as signed
+`define EXE_SLTU 6'b101011 // rd <- (rs < rt) as unsigned
+
+`define EXE_SPECIAL_INST 6'b000000 // check op3 for sub type
+`define EXE_SPECIAL2_INST 6'b011100 // check op3 for sub type
+
 // these are implemented as nop
 // special, check op3
 `define EXE_SYNC 6'b001111

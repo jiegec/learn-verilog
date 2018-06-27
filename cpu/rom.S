@@ -35,9 +35,18 @@ _start:
     ori $8, $0, 0x8
     srav $2, $2, $8
 
-    lui $1, 0x0000
+    lui $1, 0x1234
     lui $2, 0xffff
     mthi $0
+    mfhi $4
     mthi $1
+    mfhi $4
+    mfhi $4
     mthi $2
     mfhi $4
+
+    lui $1, 0x4321
+    lui $2, 0x5678
+    movz $4, $2, $1
+    movz $5, $2, $0
+    movn $4, $2, $1

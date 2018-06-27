@@ -15,7 +15,7 @@ module hilo_reg (
             hi_o <= `ZeroWord;
             lo_o <= `ZeroWord;
         end else if (we == `WriteEnable) begin
-            $display("time %3d hi %h lo %h", $time, hi_i, lo_i); 
+            $display("time %3d hi = %h lo = %h", $time, hi_i, lo_i); 
             hi_o <= hi_i;
             lo_o <= lo_i;
         end
