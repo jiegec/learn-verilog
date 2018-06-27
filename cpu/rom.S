@@ -34,3 +34,10 @@ _start:
     sra $2, $2, 16
     ori $8, $0, 0x8
     srav $2, $2, $8
+
+    lui $1, 0x0000
+    lui $2, 0xffff
+    mthi $0
+    mthi $1
+    mthi $2
+    mfhi $4

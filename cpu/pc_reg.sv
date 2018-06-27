@@ -1,4 +1,4 @@
-`include "define.v"
+`include "define.sv"
 module pc_reg (
     input wire clk,
     input wire rst,

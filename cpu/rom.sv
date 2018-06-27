@@ -1,4 +1,4 @@
-`include "define.v"
+`include "define.sv"
 module rom(
   input wire ce,
   input wire[`InstAddrBus] addr,
