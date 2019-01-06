@@ -15,9 +15,9 @@ module mem_wb(
     output reg wb_wreg,
     output reg[`RegBus] wb_wdata,
 
-    output wire wb_whilo,
-    output wire[`RegBus] wb_hi,
-    output wire[`RegBus] wb_lo
+    output reg wb_whilo,
+    output reg[`RegBus] wb_hi,
+    output reg[`RegBus] wb_lo
 );
 
     always_ff @(posedge clk) begin

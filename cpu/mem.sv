@@ -13,9 +13,9 @@ module mem(
     output reg wreg_o,
     output reg[`RegBus] wdata_o,
 
-    output wire whilo_o,
-    output wire[`RegBus] hi_o,
-    output wire[`RegBus] lo_o
+    output reg whilo_o,
+    output reg[`RegBus] hi_o,
+    output reg[`RegBus] lo_o
 );
 
     always_comb begin

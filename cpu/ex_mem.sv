@@ -15,9 +15,9 @@ module ex_mem(
   output reg mem_wreg,
   output reg[`RegBus] mem_wdata,
 
-  output wire mem_whilo,
-  output wire[`RegBus] mem_hi,
-  output wire[`RegBus] mem_lo
+  output reg mem_whilo,
+  output reg[`RegBus] mem_hi,
+  output reg[`RegBus] mem_lo
 );
 
     always_ff @(posedge clk) begin
