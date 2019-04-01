@@ -1,0 +1,9 @@
+IO_LOC "clk_in" H11;
+IO_LOC "uart_rxd" M14;
+IO_LOC "uart_txd" K12;
+IO_LOC "rst_n" T2;
+IO_LOC "led[0]" F16;
+IO_LOC "led[1]" G12;
+IO_LOC "led[2]" F13;
+IO_LOC "led[3]" F14;
+

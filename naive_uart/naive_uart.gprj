@@ -1,0 +1,14 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device>gw2a18-003</Device>
+    <FileList>
+        <File path="src/top.sv" type="file.source" enable="1"/>
+        <File path="src/top.cst" type="file.cst" enable="1"/>
+        <File path="src/uart_rx.v" type="file.source" enable="1"/>
+        <File path="src/uart_tx.v" type="file.source" enable="1"/>
+        <File path="src/uart_fifo/uart_fifo.v" type="file.source" enable="1"/>
+    </FileList>
+</Project>
